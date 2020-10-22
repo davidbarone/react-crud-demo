@@ -104,6 +104,6 @@ dist
 .tern-port
 
 # VS temporary folders
-bin
-obj
-.vscode
+bin/
+obj/
+.vscode/
