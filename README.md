@@ -2,8 +2,6 @@
 
 A simple task-list crud demo app featuring react + web api (.NET Core)
 
-## Background
-
 This is a simple demo application featuring:
 
 - Pesistence layer (Microsoft SQL Server)
@@ -12,31 +10,31 @@ This is a simple demo application featuring:
 
 It can serve as a quick demo application.
 
-## Prerequisites
+# Prerequisites
 
 To build and run, you'll need the following tools:
 
-### Microsoft SQL Server
+## Microsoft SQL Server
 
 I used the Express edition as its free.
 
-### Microsoft SQL Server Management Studio (SSMS)
+## Microsoft SQL Server Management Studio (SSMS)
 
 This was required to create the back-end database, as well as to view the data. I used version 18.
 
-### .NET Core SDK
+## .NET Core SDK
 
 I've used v3.1.8.
 
-### Node / NPM
+## Node / NPM
 
 The Node / NPM stack needs to be installed to develop the react front-end.
 
-### VSCode
+## VSCode
 
 I've used VSCode as the editor. VSCode now supports workspaces meaning you can open the API project and the react project as if one solution.
 
-## Design
+# Design
 
 The application is a simple to-do list and allows a user to manage a list of 'tasks'. It will allow a user to:
 
@@ -54,7 +52,7 @@ Each task will have the following attributes:
 - DueDate - The date that the task is due
 - IsComplete - A boolean flag which is set to true when the task is complete
 
-### URLs
+## URLs
 
 The API will implement the following endpoints:
 
@@ -67,7 +65,7 @@ The API will implement the following endpoints:
 | DELETE | /tasks/:id          | Deletes a task by `:id`     |
 | PUT    | /tasks/complete/:id | Completes a task by `:id`   |
 
-## Database
+# Database
 
 The database should be named `react-crud-demo`. I created this manually using SSMS. The `Task` table can then be created with the following script:
 
@@ -96,7 +94,7 @@ PRIMARY KEY CLUSTERED
 GO
 ```
 
-## API
+# API
 
 The API project was bootstrapped using the following command:
 
@@ -111,7 +109,7 @@ dotnet add package dapper
 dotnet add package System.Data.SqlClient
 ```
 
-### Connection Strings
+## Connection Strings
 
 The database connection string was added into appsettings.json, and injected into the code using the `IOptions` pattern. This involved:
 
@@ -122,7 +120,7 @@ The database connection string was added into appsettings.json, and injected int
 
 https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1
 
-### Adding Swagger / Swashbuckle
+## Adding Swagger / Swashbuckle
 
 For improved testing / documentation of the API, it's a good idea to add in Swagger support. This can be done by installing the Swashbuckle package:
 
@@ -144,15 +142,15 @@ app.UseSwagger();
 app.UseSwaggerUI(c => {c.SwaggerEndPoint("/swagger/v1/swagger.json","react-crud-demo")});
 ```
 
-### Launch Profiles
+## Launch Profiles
 
 A Development profile was edited in the LaunchSettings.json file. http schema was defined here (port 5000).
 
-### Building the API project
+## Building the API project
 
 `dotnet build`
 
-### Running the API project
+## Running the API project
 
 To run the API using the Development profile, run:
 
@@ -162,3 +160,9 @@ Then open browser, and navigate to http://localhost:5000/swagger
 
 https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run
 https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-3.1
+
+# UI
+
+The UI is built using React. The boilerplate code was created using:
+
+`npx create-react-app react-crud-demo-ui`

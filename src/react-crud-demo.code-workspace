@@ -2,6 +2,9 @@
   "folders": [
     {
       "path": "react-crud-demo-api"
+    },
+    {
+      "path": "react-crud-demo-ui"
     }
   ],
   "settings": {}
