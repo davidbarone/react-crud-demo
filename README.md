@@ -158,6 +158,10 @@ To run the API using the Development profile, run:
 
 Then open browser, and navigate to http://localhost:5000/swagger
 
+If everything builds and runs correctly, you should see something like this on the swagger homepage:
+
+![react-crud-demo-swagger](https://github.com/davidbarone/react-crud-demo/blob/main/images/swagger.png?raw=true)
+
 https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run
 https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-3.1
 
@@ -166,3 +170,7 @@ https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspn
 The UI is built using React. The boilerplate code was created using:
 
 `npx create-react-app react-crud-demo-ui`
+
+## React Folder Structure
+
+
