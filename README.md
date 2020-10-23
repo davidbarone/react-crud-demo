@@ -173,4 +173,5 @@ The UI is built using React. The boilerplate code was created using:
 
 ## React Folder Structure
 
+All the components, utils and other dynamic files go into the /src folder.
 
