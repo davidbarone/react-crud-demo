@@ -6,6 +6,7 @@ import { Route } from 'react-router-dom'
 import NavBar from "../navbar/NavBar"
 import Home from "../home/Home"
 import About from "../about/About"
+import TasksPage from '../TasksPage/TasksPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <NavBar />
         <Route path="/" exact component={Home} />
+        <Route path="/tasks" exact component={TasksPage} />
         <Route path="/about" exact component={About} />
       </Router>
     </div>

@@ -33,6 +33,9 @@ namespace react_crud_demo_api
 
             // Swagger generation
             services.AddSwaggerGen();
+
+            // CORS
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,12 +57,21 @@ namespace react_crud_demo_api
 
             app.UseRouting();
 
+            // global cors policy
+            // allow any origin
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowAnyOrigin()
+                .SetIsOriginAllowed((host) => true));
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }

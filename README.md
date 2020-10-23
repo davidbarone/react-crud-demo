@@ -146,6 +146,37 @@ app.UseSwaggerUI(c => {c.SwaggerEndPoint("/swagger/v1/swagger.json","react-crud-
 
 A Development profile was edited in the LaunchSettings.json file. http schema was defined here (port 5000).
 
+## CORS
+
+Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served. Typically, when running the API and UI, both will be running under different domains or ports (for example in development, the API is running under localhost:5000 whereas the UI is running under localhost:3000).
+
+To implement a simple global policy to all all domains to be able to access the API, CORS must be enabled in the `startup.cs` file in the API:
+
+``` cs
+public void ConfigureServices(IServiceCollection services) {
+
+	...
+
+	// CORS
+    services.AddCors();
+}
+
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+
+	...
+
+    // global cors policy
+    // allow any origin
+    app.UseCors(x => x
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowAnyOrigin()
+        .SetIsOriginAllowed((host) => true));
+}
+```
+
+(note that the `app.UseCors` line must be placed after the `app.UseRouting();` line)
+
 ## Building the API project
 
 `dotnet build`
@@ -189,5 +220,15 @@ The router was implemented as follows:
   - Displays a custom `NavBar` component
   - Added multiple `Route` components to redirect based on the route selected.
 
+## .Env
 
+The API base URL is configured in .env files. We need the `dotenv` package for this:
 
+`npm i dotenv`
+
+Then we create 2 files in the root:
+
+- .env.development
+- .env.production
+
+And each has a value for API_BASE
