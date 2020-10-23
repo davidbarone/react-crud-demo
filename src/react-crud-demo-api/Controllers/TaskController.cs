@@ -31,6 +31,27 @@ namespace react_crud_demo_api.Controllers
             }
         }
 
+        [HttpGet("/Tasks/:id")]
+        public ActionResult<TaskInfo> GetOne(int id)
+        {
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var task = db.Query<TaskInfo>(
+                    "SELECT * FROM TASK WHERE TaskId = @TaskId",
+                    new
+                    {
+                        TaskId = id
+                    }).FirstOrDefault();
+
+                if (task == null)
+                {
+                    throw new Exception("Task not found.");
+                }
+
+                return Ok(task);
+            }
+        }
+
         [HttpPost("/Tasks")]
         public ActionResult<TaskInfo> Create(TaskInfo task)
         {
@@ -54,7 +75,7 @@ SELECT * FROM Task WHERE TaskId = SCOPE_IDENTITY();", new
         }
 
         [HttpPut("/Tasks/:id")]
-        public ActionResult<TaskInfo> Update(int id, [FromBody] TaskInfo task)
+        public ActionResult Update(int id, [FromBody] TaskInfo task)
         {
             if (id != task.TaskId)
             {
@@ -85,7 +106,7 @@ WHERE
         }
 
         [HttpDelete("/Tasks/:id")]
-        public ActionResult<TaskInfo> Delete(int id)
+        public ActionResult Delete(int id)
         {
             using (var db = new SqlConnection(ConnectionString))
             {
@@ -98,6 +119,25 @@ WHERE
                     TaskId = id
                 });
                 return Ok();
+            }
+        }
+
+        [HttpPut("/Tasks/Complete/:id")]
+        public ActionResult Complete(int id)
+        {
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var newTask = db.Query<TaskInfo>(@"
+UPDATE
+    Task
+SET
+    TaskComplete = 1
+WHERE
+    TaskId = @TaskId;", new
+                {
+                    TaskId = id
+                });
+                return NoContent();
             }
         }
 
