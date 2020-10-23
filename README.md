@@ -173,5 +173,21 @@ The UI is built using React. The boilerplate code was created using:
 
 ## React Folder Structure
 
-All the components, utils and other dynamic files go into the /src folder.
+All the components, utils and other dynamic files go into the /src folder. This involved a small rearrangement of files. In particular the default `App` component was moved into a new /app folder within a new /components folder within /src. All the components are to go into separate folders in /components for a cleaner code structure.
+
+In summary, static files go into the /public folder, and dynamic webpack files go into the /src folder.
+
+## React Router
+
+React-router-dom was installed via:
+
+`npm i react-router-dom`.
+
+The router was implemented as follows:
+- Created `Home` and `About` components
+- Added a `Router` component in the `App` component. This:
+  - Displays a custom `NavBar` component
+  - Added multiple `Route` components to redirect based on the route selected.
+
+
 
