@@ -222,13 +222,10 @@ The router was implemented as follows:
 
 ## .Env
 
-The API base URL is configured in .env files. We need the `dotenv` package for this:
+The API base URL is configured in .env file. This file will not be stored in github by default.
 
-`npm i dotenv`
+You will need to manually create a .env file in the root of the UI project with the following contents:
 
-Then we create 2 files in the root:
-
-- .env.development
-- .env.production
-
-And each has a value for API_BASE
+```
+REACT_APP_API_BASE=http://localhost:5000
+```
