@@ -31,7 +31,7 @@ namespace react_crud_demo_api.Controllers
             }
         }
 
-        [HttpGet("/Tasks/:id")]
+        [HttpGet("/Tasks/{id}")]
         public ActionResult<TaskInfo> GetOne(int id)
         {
             using (var db = new SqlConnection(ConnectionString))
@@ -74,7 +74,7 @@ SELECT * FROM Task WHERE TaskId = SCOPE_IDENTITY();", new
             }
         }
 
-        [HttpPut("/Tasks/:id")]
+        [HttpPut("/Tasks/{id}")]
         public ActionResult Update(int id, [FromBody] TaskInfo task)
         {
             if (id != task.TaskId)
@@ -105,7 +105,7 @@ WHERE
             }
         }
 
-        [HttpDelete("/Tasks/:id")]
+        [HttpDelete("/Tasks/{id}")]
         public ActionResult Delete(int id)
         {
             using (var db = new SqlConnection(ConnectionString))
@@ -122,7 +122,7 @@ WHERE
             }
         }
 
-        [HttpPut("/Tasks/Complete/:id")]
+        [HttpPut("/Tasks/Complete/{id}")]
         public ActionResult Complete(int id)
         {
             using (var db = new SqlConnection(ConnectionString))

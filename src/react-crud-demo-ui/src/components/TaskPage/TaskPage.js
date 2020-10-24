@@ -49,7 +49,7 @@ const TaskPage = props => {
 
   return (
     <>
-      <h2>Manage Course</h2>
+      <h2>Manage Task</h2>
       <TaskForm
         errors={errors}
         task={task}

@@ -229,3 +229,15 @@ You will need to manually create a .env file in the root of the UI project with 
 ```
 REACT_APP_API_BASE=http://localhost:5000
 ```
+
+## Running the UI
+
+You can view the application in debug mode by running:
+
+`npm start`
+
+You should hopefully see the application through http
+
+![react-crud-demo](https://github.com/davidbarone/react-crud-demo/blob/main/images/react-crud-demo.png?raw=true)
+
+

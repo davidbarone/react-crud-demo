@@ -23,9 +23,9 @@ function GetSingleTask(id) {
 }
 
 function SaveTask(task) {
-    console.log(task);
     var method = task.taskId ? "PUT" : "POST"
     var url = `${process.env.REACT_APP_API_BASE}/tasks`;
+    
     if (method === "PUT") {
         url = `${url}/${task.taskId}`;
     }
@@ -33,16 +33,16 @@ function SaveTask(task) {
     return fetch(
         url,
         {
-            method,
+            method: method,
             headers: { "content-type": "application/json" },
             body: JSON.stringify(task)
         })
-        .then(response => response.json())
+        .then(response => { if (method === "POST") { response.json() } })
         .then(data => data);
 }
 
 function DeleteTask(id) {
-    var url = `${process.env.BASE_URL}/Tasks/${id}`;
+    var url = `${process.env.REACT_APP_API_BASE}/Tasks/${id}`;
     return fetch(
         url,
         {

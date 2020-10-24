@@ -7,18 +7,25 @@ function TaskList(props) {
         <table className="table">
             <thead>
                 <tr>
-                    <th>&nbsp;</th>
                     <th>Task ID</th>
                     <th>Description</th>
                     <th>Priority</th>
                     <th>Due Date</th>
-                    <th>Completed</th>
+                    <th>&nbsp;</th>
                 </tr>
             </thead>
             <tbody>
                 {props.tasks.map(task => {
                     return (
                         <tr key={task.taskId}>
+                            <td>
+                                <Link to={"/task/" + task.taskId}>{task.taskId}</Link>
+                            </td>
+                            <td>
+                                {task.taskDescription}
+                            </td>
+                            <td>{task.taskPriority}</td>
+                            <td>{task.taskDue}</td>
                             <td>
                                 <button
                                     className="btn btn-outline-danger"
@@ -29,15 +36,6 @@ function TaskList(props) {
                                     Delete
                                 </button>
                             </td>
-                            <td>
-                            {task.taskId}
-                            </td>
-                            <td>
-                                <Link to={"/task/" + task.taskId}>{task.taskDescription}</Link>
-                            </td>
-                            <td>{task.taskPriority}</td>
-                            <td>{task.taskDue}</td>
-                            <td>{task.taskComplete}</td>
                         </tr>
                     );
                 })}

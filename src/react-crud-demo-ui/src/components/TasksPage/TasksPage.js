@@ -3,12 +3,20 @@ import { GetAllTasks, DeleteTask } from "../../utils/ApiFacade";
 import TaskList from "./TaskList"
 import { Link } from "react-router-dom";
 
-function TasksPage() {
+function TasksPage(props) {
     const [tasks, setTasks] = useState([]);
 
     useEffect(() => {
         GetAllTasks().then(t => setTasks(t));
     },[]);
+
+    function DeleteAndRefresh(id) {
+        DeleteTask(id).then(() => {
+            // Refresh current page
+            props.history.push("/xxx");
+            props.history.goBack();
+        });
+    }
 
     return (
         <>
@@ -16,7 +24,7 @@ function TasksPage() {
             <Link to="/Task">
                 Add Task
             </Link>
-            <TaskList tasks={tasks} deleteTask={DeleteTask} />
+            <TaskList tasks={tasks} deleteTask={DeleteAndRefresh} />
         </>
     );
 }
