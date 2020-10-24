@@ -7,6 +7,7 @@ import NavBar from "../navbar/NavBar"
 import Home from "../home/Home"
 import About from "../about/About"
 import TasksPage from '../TasksPage/TasksPage';
+import TaskPage from '../TaskPage/TaskPage';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <NavBar />
         <Route path="/" exact component={Home} />
         <Route path="/tasks" exact component={TasksPage} />
+        <Route path="/task/:id" component={TaskPage} />
+        <Route path="/task" component={TaskPage} />        
         <Route path="/about" exact component={About} />
       </Router>
     </div>

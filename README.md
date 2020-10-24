@@ -220,7 +220,7 @@ The router was implemented as follows:
   - Displays a custom `NavBar` component
   - Added multiple `Route` components to redirect based on the route selected.
 
-## .Env
+## .env File
 
 The API base URL is configured in .env file. This file will not be stored in github by default.
 

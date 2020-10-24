@@ -8,7 +8,7 @@ function TasksPage() {
 
     useEffect(() => {
         GetAllTasks().then(t => setTasks(t));
-    });
+    },[]);
 
     return (
         <>
