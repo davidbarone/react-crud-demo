@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import TextInput from "../../utils/TextInput";
-import SelectInput from "../../utils/SelectInput";
+import TextInput from "../../Utils/TextInput";
+import SelectInput from "../../Utils/SelectInput";
 
 function TaskForm(props) {
     return (

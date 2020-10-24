@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { GetAllTasks, DeleteTask } from "../../utils/ApiFacade";
+import { GetAllTasks, DeleteTask } from "../../Utils/ApiFacade";
 import TaskList from "./TaskList"
 import { Link } from "react-router-dom";
 
