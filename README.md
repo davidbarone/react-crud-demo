@@ -1,5 +1,28 @@
 # React-Crud-Demo
 
+- [React-Crud-Demo](#react-crud-demo)
+- [Pre-requisites](#pre-requisites)
+  - [Microsoft SQL Server](#microsoft-sql-server)
+  - [Microsoft SQL Server Management Studio (SSMS)](#microsoft-sql-server-management-studio-ssms)
+  - [.NET Core SDK](#net-core-sdk)
+  - [Node / NPM](#node--npm)
+  - [VSCode](#vscode)
+- [Application Design](#application-design)
+  - [API Endpoints](#api-endpoints)
+- [Database](#database)
+- [API Project](#api-project)
+  - [Connection Strings](#connection-strings)
+  - [Adding Swagger / Swashbuckle](#adding-swagger--swashbuckle)
+  - [Launch Profiles](#launch-profiles)
+  - [CORS](#cors)
+  - [Building the API project](#building-the-api-project)
+  - [Running the API project](#running-the-api-project)
+- [UI Project](#ui-project)
+  - [React Folder Structure](#react-folder-structure)
+  - [React Router](#react-router)
+  - [Environment File](#environment-file)
+  - [Running the UI](#running-the-ui)
+
 This is a simple to-do application written as a React single-page-application connecting to an API using a SQL Server database for persistance. The API layer is written using .NET Core WebApi.
 
 This application is typical of simple interview technical tests, and demonstrates the technologies in a very basic reference application.
@@ -88,7 +111,7 @@ PRIMARY KEY CLUSTERED
 GO
 ```
 
-# API
+# API Project
 
 The API project was initialised using the following command:
 
@@ -204,6 +227,10 @@ All the components, utils and other dynamic files go into the /src folder. This 
 
 In summary, static files go into the /public folder, and dynamic webpack files go into the /src folder.
 
+The /src folder structure looks like this:
+
+![src-folder-structure](https://github.com/davidbarone/react-crud-demo/blob/main/images/src-folder-structure.png?raw=true)
+
 ## React Router
 
 React-router-dom was installed via:
@@ -216,7 +243,7 @@ The router was implemented as follows:
   - Displays a custom `NavBar` component
   - Added multiple `Route` components to redirect based on the route selected.
 
-## .env File
+## Environment File
 
 The API base URL is configured in .env file. This file will not be stored in github by default.
 
@@ -236,5 +263,4 @@ You should hopefully see the application through http
 
 ![react-crud-demo](https://github.com/davidbarone/react-crud-demo/blob/main/images/react-crud-demo.png?raw=true)
 
-
-
+--- D.Barone 24-Oct-2020 ---
