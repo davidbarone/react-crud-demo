@@ -23,9 +23,9 @@
   - [Environment File](#environment-file)
   - [Running the UI](#running-the-ui)
 
-This is a simple to-do application written as a React single-page-application connecting to an API using a SQL Server database for persistance. The API layer is written using .NET Core WebApi.
+This is a simple 'to-do' application written as a React front-end, connecting to an web API, using a SQL Server database for persistance. The API layer is written using .NET Core.
 
-This application is typical of simple interview technical tests, and demonstrates the technologies in a very basic reference application.
+This is typical of simple interview technical tests, and demonstrates the technologies in a very basic reference application.
 
 # Pre-requisites
 
@@ -259,7 +259,7 @@ You can view the application in debug mode by running:
 
 `npm start`
 
-You should hopefully see the application through http
+You should hopefully see the application running from http://localhost:3000
 
 ![react-crud-demo](https://github.com/davidbarone/react-crud-demo/blob/main/images/react-crud-demo.png?raw=true)
 
