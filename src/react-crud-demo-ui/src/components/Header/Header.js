@@ -5,7 +5,7 @@ function Header() {
     return (
         <>
             <header>
-                <div style={{ position: "absolute", top: "10px", left: "10px", fontSize:"2em" }}>React-Crud-Demo</div>
+                <div style={{ position: "absolute", top: "6px", left: "10px", fontSize:"2em" }}>React-Crud-Demo</div>
                 <NavBar />
             </header>
         </>

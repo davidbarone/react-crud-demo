@@ -7,6 +7,7 @@ import About from "../AboutPage/AboutPage"
 import TasksPage from '../TasksPage/TasksPage';
 import TaskPage from '../TaskPage/TaskPage';
 import Header from "../Header/Header"
+import Footer from "../Footer/Footer"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/about" exact component={About} />
           </Switch>
         </div>
+        <Footer />
       </Router>
     </div>
   );
